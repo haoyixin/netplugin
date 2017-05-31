@@ -34,7 +34,7 @@ all: build unit-test system-test ubuntu-tests
 all-CI: stop clean start
 	make ssh-build
 	vagrant ssh netplugin-node1 -c 'sudo -i bash -lc "source /etc/profile.d/envvar.sh \
-		&& cd /opt/gopath/src/github.com/contiv/netplugin \
+		&& cd /opt/gopath/src/github.com/haoyixin/netplugin \
 		&& make ${CI_HOST_TARGETS}"'
 ifdef SKIP_SYSTEM_TEST
 	echo "Skipping system tests"
@@ -84,13 +84,13 @@ endif
 checks: go-version gofmt-src golint-src govet-src misspell-src
 
 run-build: deps checks clean
-	cd $(GOPATH)/src/github.com/contiv/netplugin && \
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin && \
 	USE_RELEASE=${USE_RELEASE} BUILD_VERSION=${BUILD_VERSION} \
 	TO_BUILD="${TO_BUILD}" VERSION_FILE=${VERSION_FILE} \
 	scripts/build.sh
 
 build-docker-image: start
-	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make host-build-docker-image"'
+	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-build-docker-image"'
 
 
 ifdef NET_CONTAINER_BUILD
@@ -104,7 +104,7 @@ endif
 build: start ssh-build stop
 
 clean: deps
-	rm -rf $(GOPATH)/pkg/*/github.com/contiv/netplugin/
+	rm -rf $(GOPATH)/pkg/*/github.com/haoyixin/netplugin/
 	go clean -i -v ./...
 
 update:
@@ -137,24 +137,24 @@ k8s-test:
 	export CONTIV_K8=1 && \
 	make k8s-sanity-cluster && \
 	cd vagrant/k8s/ && \
-	vagrant ssh k8master -c 'sudo -i bash -lc "cd /opt/gopath/src/github.com/contiv/netplugin && make run-build"' && \
+	vagrant ssh k8master -c 'sudo -i bash -lc "cd /opt/gopath/src/github.com/haoyixin/netplugin && make run-build"' && \
 	./start_sanity_service.sh
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py -scheduler 'k8'
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py -scheduler 'k8'
 	CONTIV_K8=1 CONTIV_NODES=3 go test -v -timeout 540m ./test/systemtests -check.v -check.f "00SSH|TestBasic|TestNetwork|ACID|TestPolicy|TestTrigger"
 	cd vagrant/k8s && vagrant destroy -f
 # Mesos demo targets
 mesos-docker-demo:
 	cd vagrant/mesos-docker && \
 	vagrant up && \
-	vagrant ssh node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make run-build"' && \
-	vagrant ssh node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && ./scripts/python/startPlugin.py -nodes 192.168.33.10,192.168.33.11"'
+	vagrant ssh node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make run-build"' && \
+	vagrant ssh node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && ./scripts/python/startPlugin.py -nodes 192.168.33.10,192.168.33.11"'
 
 mesos-docker-destroy:
 	cd vagrant/mesos-docker && vagrant destroy -f
 
 nomad-docker:
 	cd vagrant/nomad-docker && vagrant up
-	VAGRANT_CWD=./vagrant/nomad-docker/ vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make host-restart"'
+	VAGRANT_CWD=./vagrant/nomad-docker/ vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-restart"'
 
 mesos-cni-demo:
 	$(MAKE) -C vagrant/mesos-cni $@
@@ -173,41 +173,41 @@ stop:
 endif
 
 demo: ssh-build
-	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make host-restart host-swarm-restart"'
+	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-restart host-swarm-restart"'
 
 ssh:
-	@vagrant ssh netplugin-node1 -c 'bash -lc "cd /opt/gopath/src/github.com/contiv/netplugin/ && bash"' || echo 'Please run "make demo"'
+	@vagrant ssh netplugin-node1 -c 'bash -lc "cd /opt/gopath/src/github.com/haoyixin/netplugin/ && bash"' || echo 'Please run "make demo"'
 
 ifdef NET_CONTAINER_BUILD
 ssh-build:
-	cd /go/src/github.com/contiv/netplugin && make run-build install-shell-completion
+	cd /go/src/github.com/haoyixin/netplugin && make run-build install-shell-completion
 else
 ssh-build: start
-	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make run-build install-shell-completion"'
+	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make run-build install-shell-completion"'
 endif
 
 unit-test: stop clean
 	./scripts/unittests -vagrant
 
 integ-test: stop clean start ssh-build
-	vagrant ssh netplugin-node1 -c 'sudo -i bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make host-integ-test"'
+	vagrant ssh netplugin-node1 -c 'sudo -i bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-integ-test"'
 
 ubuntu-tests:
 	CONTIV_NODE_OS=ubuntu make clean build unit-test system-test stop
 
 system-test:start
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py
 	go test -v -timeout 480m ./test/systemtests -check.v -check.abort -check.f "00SSH|Basic|Network|Policy|TestTrigger|ACIM|Netprofile"
 
 l3-test:
 	CONTIV_L3=2 CONTIV_NODES=3 make stop start ssh-build
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py -contiv_l3 2
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./createcfg.py -contiv_l3 2
 	CONTIV_L3=2 CONTIV_NODES=3 go test -v -timeout 900m ./test/systemtests -check.v -check.abort
 	CONTIV_L3=2 CONTIV_NODES=3 make stop
 l3-demo:
 	CONTIV_L3=1 CONTIV_NODES=3 vagrant up
 	make ssh-build
-	vagrant ssh netplugin-node1 -c 'sudo -i bash -lc "cd /opt/gopath/src/github.com/contiv/netplugin && make host-restart"'
+	vagrant ssh netplugin-node1 -c 'sudo -i bash -lc "cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-restart"'
 
 host-build:
 	@echo "dev: making binaries..."
@@ -215,15 +215,15 @@ host-build:
 
 host-unit-test:
 	@echo dev: running unit tests...
-	cd $(GOPATH)/src/github.com/contiv/netplugin && sudo -E PATH=$(PATH) scripts/unittests
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin && sudo -E PATH=$(PATH) scripts/unittests
 
 host-unit-test-coverage:
 	@echo dev: running unit tests...
-	cd $(GOPATH)/src/github.com/contiv/netplugin && sudo -E PATH=$(PATH) scripts/unittests --coverage-basic
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin && sudo -E PATH=$(PATH) scripts/unittests --coverage-basic
 
 host-unit-test-coverage-detail:
 	@echo dev: running unit tests...
-	cd $(GOPATH)/src/github.com/contiv/netplugin && sudo -E PATH=$(PATH) scripts/unittests --coverage-detail
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin && sudo -E PATH=$(PATH) scripts/unittests --coverage-detail
 
 host-integ-test: host-cleanup start-aci-gw
 	@echo dev: running integration tests...
@@ -242,15 +242,15 @@ host-build-docker-image:
 
 host-cleanup:
 	@echo dev: cleaning up services...
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./cleanup.py -nodes ${CLUSTER_NODE_IPS}
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./cleanup.py -nodes ${CLUSTER_NODE_IPS}
 
 host-swarm-restart:
 	@echo dev: restarting swarm ...
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startSwarm.py -nodes ${CLUSTER_NODE_IPS} -swarm ${CONTIV_DOCKER_SWARM}
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startSwarm.py -nodes ${CLUSTER_NODE_IPS} -swarm ${CONTIV_DOCKER_SWARM}
 
 host-restart:
 	@echo dev: restarting services...
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startPlugin.py -nodes ${CLUSTER_NODE_IPS}
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startPlugin.py -nodes ${CLUSTER_NODE_IPS}
 
 # create the rootfs for v2plugin. this is required for docker plugin create command
 host-pluginfs-create:
@@ -270,12 +270,12 @@ host-plugin-update:
 host-plugin-restart:
 	@echo dev: restarting services...
 	cp bin/netplugin bin/netmaster bin/netctl install/v2plugin/rootfs
-	cd $(GOPATH)/src/github.com/contiv/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startPlugin.py -nodes ${CLUSTER_NODE_IPS} -plugintype "v2plugin"
+	cd $(GOPATH)/src/github.com/haoyixin/netplugin/scripts/python && PYTHONIOENCODING=utf-8 ./startPlugin.py -nodes ${CLUSTER_NODE_IPS} -plugintype "v2plugin"
 
 # complete workflow to create rootfs, create/enable plugin and start swarm-mode
 demo-v2plugin:
 	CONTIV_V2PLUGIN_NAME="$${CONTIV_V2PLUGIN_NAME:-contiv/v2plugin:0.1}" CONTIV_DOCKER_VERSION="$${CONTIV_DOCKER_VERSION:-1.13.1}" CONTIV_DOCKER_SWARM="$${CONTIV_DOCKER_SWARM:-swarm_mode}" make ssh-build
-	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/contiv/netplugin && make host-pluginfs-create host-plugin-restart host-swarm-restart"'
+	vagrant ssh netplugin-node1 -c 'bash -lc "source /etc/profile.d/envvar.sh && cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-pluginfs-create host-plugin-restart host-swarm-restart"'
 
 # release a v2 plugin
 host-plugin-release: 
@@ -290,7 +290,7 @@ only-tar:
 
 tar: clean-tar
 	CONTIV_NODES=1 ${MAKE} build
-	@tar -jcf $(TAR_FILE) -C $(GOPATH)/src/github.com/contiv/netplugin/bin netplugin netmaster netctl contivk8s netcontiv -C $(GOPATH)/src/github.com/contiv/netplugin/scripts contrib/completion/bash/netctl
+	@tar -jcf $(TAR_FILE) -C $(GOPATH)/src/github.com/haoyixin/netplugin/bin netplugin netmaster netctl contivk8s netcontiv -C $(GOPATH)/src/github.com/haoyixin/netplugin/scripts contrib/completion/bash/netctl
 
 clean-tar:
 	@rm -f $(TAR_LOC)/*.$(TAR_EXT)

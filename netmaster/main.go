@@ -24,9 +24,9 @@ import (
 	"time"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/netmaster/daemon"
-	"github.com/contiv/netplugin/netmaster/docknet"
-	"github.com/contiv/netplugin/version"
+	"github.com/haoyixin/netplugin/netmaster/daemon"
+	"github.com/haoyixin/netplugin/netmaster/docknet"
+	"github.com/haoyixin/netplugin/version"
 )
 
 type cliOpts struct {

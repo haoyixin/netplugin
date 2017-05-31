@@ -23,13 +23,13 @@ import (
 	log "github.com/Sirupsen/logrus"
 
 	"fmt"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/gstate"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netmaster/resources"
-	"github.com/contiv/netplugin/state"
-	"github.com/contiv/netplugin/utils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/gstate"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netmaster/resources"
+	"github.com/haoyixin/netplugin/state"
+	"github.com/haoyixin/netplugin/utils"
 )
 
 var fakeDriver *state.FakeStateDriver
@@ -326,7 +326,7 @@ func TestVxlanConfigWithLateHostBindings(t *testing.T) {
 	verifyKeys(t, keys)
 }
 
-// Tests for https://github.com/contiv/netplugin/issues/214
+// Tests for https://github.com/haoyixin/netplugin/issues/214
 func TestConfigPktTagOutOfRange(t *testing.T) {
 	CfgBytes := []byte(`{
     "Tenants" : [{

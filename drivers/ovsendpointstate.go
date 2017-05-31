@@ -19,8 +19,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
 )
 
 // OvsOperEndpointState is the necessary data used to perform operations on endpoints.

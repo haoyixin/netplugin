@@ -3,7 +3,7 @@ package state
 import (
 	"strings"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 
 	log "github.com/Sirupsen/logrus"
 )

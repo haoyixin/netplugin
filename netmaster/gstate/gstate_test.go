@@ -18,8 +18,8 @@ package gstate
 import (
 	"testing"
 
-	"github.com/contiv/netplugin/netmaster/resources"
-	"github.com/contiv/netplugin/state"
+	"github.com/haoyixin/netplugin/netmaster/resources"
+	"github.com/haoyixin/netplugin/state"
 )
 
 var (

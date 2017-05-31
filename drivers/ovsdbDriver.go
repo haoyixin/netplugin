@@ -24,7 +24,7 @@ import (
 	"time"
 
 	"github.com/contiv/libovsdb"
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 	"github.com/contiv/ofnet"
 
 	log "github.com/Sirupsen/logrus"

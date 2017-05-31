@@ -779,7 +779,7 @@ func (k *kubernetes) reloadNode(n *node) error {
 	topDir = strings.Split(topDir, ":")[1]
 	cmd := exec.Command("vagrant", "reload", n.Name())
 	cmd.Env = os.Environ()
-	cmd.Env = append(cmd.Env, "VAGRANT_CWD="+topDir+"/src/github.com/contiv/netplugin/vagrant/k8s/")
+	cmd.Env = append(cmd.Env, "VAGRANT_CWD="+topDir+"/src/github.com/haoyixin/netplugin/vagrant/k8s/")
 	cmd.Env = append(cmd.Env, "CONTIV_K8=1")
 	out, err := cmd.CombinedOutput()
 

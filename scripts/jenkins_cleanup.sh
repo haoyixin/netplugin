@@ -14,7 +14,7 @@ echo "Existing VMs:"
 vboxmanage list vms
 echo "------------"
 
-cd $WORKSPACE/src/github.com/contiv/netplugin
+cd $WORKSPACE/src/github.com/haoyixin/netplugin
 vagrant destroy -f || true
 
 rm -rf /home/admin/VirtualBox\ VMs/* || true

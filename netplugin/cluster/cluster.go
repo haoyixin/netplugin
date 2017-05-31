@@ -25,9 +25,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netplugin/plugin"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/utils/netutils"
 	"github.com/contiv/objdb"
 
 	log "github.com/Sirupsen/logrus"

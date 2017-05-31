@@ -15,8 +15,8 @@ package nameserver
 import (
 	"fmt"
 	"github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
 	"github.com/miekg/dns"
 	"os"
 	"testing"

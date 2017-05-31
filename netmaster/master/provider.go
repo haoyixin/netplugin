@@ -17,8 +17,8 @@ package master
 
 import (
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/utils"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/utils"
 )
 
 //SvcProviderUpdate propagates service provider updates to netplugins

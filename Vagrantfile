@@ -174,7 +174,7 @@ echo "etcd --name %{node_name} --data-dir /var/lib/etcd \
  --initial-cluster %{node_peers} --initial-cluster-state new" >> /usr/bin/etcd.sh
 
 chmod +x /usr/bin/etcd.sh
-cp %{gopath_folder}/src/github.com/contiv/netplugin/scripts/etcd.service /etc/systemd/system/etcd.service
+cp %{gopath_folder}/src/github.com/haoyixin/netplugin/scripts/etcd.service /etc/systemd/system/etcd.service
 
 ## start consul
 echo "#!/bin/bash" > /usr/bin/consul.sh
@@ -182,7 +182,7 @@ echo "consul agent -server %{consul_join_flag} %{consul_bootstrap_flag} \
  -bind=%{node_addr} -data-dir /opt/consul" >> /usr/bin/consul.sh
 
  chmod +x /usr/bin/consul.sh
-cp %{gopath_folder}/src/github.com/contiv/netplugin/scripts/consul.service /etc/systemd/system/consul.service
+cp %{gopath_folder}/src/github.com/haoyixin/netplugin/scripts/consul.service /etc/systemd/system/consul.service
 
 systemctl daemon-reload || exit 1
 systemctl enable etcd || exit 1
@@ -363,7 +363,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             if ENV["GOPATH"] && ENV['GOPATH'] != ""
               node.vm.synced_folder "../../../", File.join(gopath_folder, "src"), rsync: true
             else
-              node.vm.synced_folder ".", File.join(gopath_folder, "src/github.com/contiv/netplugin"), rsync: true
+              node.vm.synced_folder ".", File.join(gopath_folder, "src/github.com/haoyixin/netplugin"), rsync: true
             end
 
             node.vm.provision "shell" do |s|

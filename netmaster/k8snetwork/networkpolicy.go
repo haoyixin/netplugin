@@ -9,7 +9,7 @@ import (
 	"github.com/contiv/client-go/pkg/apis/extensions/v1beta1"
 	"github.com/contiv/client-go/pkg/watch"
 	"github.com/contiv/contivmodel/client"
-	"github.com/contiv/netplugin/utils/k8sutils"
+	"github.com/haoyixin/netplugin/utils/k8sutils"
 	"reflect"
 	"strings"
 	"time"

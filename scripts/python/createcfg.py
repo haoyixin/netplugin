@@ -62,7 +62,7 @@ data['network'] = args.network
 data['tenant'] = args.tenant
 data['encap'] = args.encap
 
-filepath = os.environ['GOPATH'] + '/src/github.com/contiv/netplugin/test/systemtests/cfg.json'
+filepath = os.environ['GOPATH'] + '/src/github.com/haoyixin/netplugin/test/systemtests/cfg.json'
 with open(filepath, 'w') as outfile:
 	print "Generating the config file: " + filepath
 	json.dump(data, outfile)

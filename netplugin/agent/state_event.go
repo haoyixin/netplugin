@@ -22,13 +22,13 @@ import (
 	"strings"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/master"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netplugin/cluster"
-	"github.com/contiv/netplugin/netplugin/plugin"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/master"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/utils/netutils"
 )
 
 const (

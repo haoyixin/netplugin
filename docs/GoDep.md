@@ -10,7 +10,7 @@ $ go get -d -u github.com/tools/godep
 ## Make Tasks
 
 Please review the make tasks in the
-[Makefile](https://github.com/contiv/netplugin/blob/master/Makefile) to see how
+[Makefile](https://github.com/haoyixin/netplugin/blob/master/Makefile) to see how
 these tasks are implemented, they will assist with debugging godep issues in
 your `$GOPATH`, etc.
 

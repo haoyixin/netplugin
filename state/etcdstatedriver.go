@@ -24,7 +24,7 @@ import (
 
 	"golang.org/x/net/context"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 	"github.com/coreos/etcd/client"
 
 	log "github.com/Sirupsen/logrus"

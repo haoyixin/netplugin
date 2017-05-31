@@ -28,7 +28,7 @@ import (
 	"strings"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
 	"github.com/docker/docker/pkg/plugins"
 	"github.com/docker/libnetwork/drivers/remote/api"
 	"github.com/gorilla/mux"

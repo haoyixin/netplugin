@@ -70,7 +70,7 @@ class Node:
     # Create v2plugin on vagrant node
     def createV2Plugin(self, args=""):
         ssh_object = self.sshConnect(self.username, self.password)
-        command = "docker plugin create " + os.environ.get("CONTIV_V2PLUGIN_NAME", "contiv/v2plugin:0.0") + " /opt/gopath/src/github.com/contiv/netplugin/install/v2plugin/ " + args + ">> /tmp/netplugin.log 2>&1"
+        command = "docker plugin create " + os.environ.get("CONTIV_V2PLUGIN_NAME", "contiv/v2plugin:0.0") + " /opt/gopath/src/github.com/haoyixin/netplugin/install/v2plugin/ " + args + ">> /tmp/netplugin.log 2>&1"
         self.runCmd(command)
 
     # Enable v2plugin on vagrant node

@@ -34,7 +34,7 @@ import (
 	"github.com/jainvipin/bitset"
 	netlink "github.com/vishvananda/netlink"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 )
 
 var endianNess string

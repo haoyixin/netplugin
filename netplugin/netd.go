@@ -23,11 +23,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netplugin/agent"
-	"github.com/contiv/netplugin/netplugin/cluster"
-	"github.com/contiv/netplugin/netplugin/plugin"
-	"github.com/contiv/netplugin/version"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netplugin/agent"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/version"
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/Sirupsen/logrus/hooks/syslog"

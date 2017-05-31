@@ -4,5 +4,5 @@
 # It shall publish a new release on github with the changes pushed.
 
 . $(dirname $0)/env.sh
-cd $GOSRC/github.com/contiv/netplugin
+cd $GOSRC/github.com/haoyixin/netplugin
 make release

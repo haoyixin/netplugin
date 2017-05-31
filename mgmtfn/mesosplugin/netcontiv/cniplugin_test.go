@@ -19,7 +19,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/contiv/netplugin/mgmtfn/mesosplugin/cniapi"
+	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"

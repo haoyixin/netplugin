@@ -18,7 +18,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	contivClient "github.com/contiv/contivmodel/client"
-	"github.com/contiv/netplugin/version"
+	"github.com/haoyixin/netplugin/version"
 )
 
 // DefaultMaster is the master to use when none is provided.

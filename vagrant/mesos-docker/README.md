@@ -11,7 +11,7 @@ This document explains how to use Netplugin with Mesos Marathon. Currently, netp
 ### Step 1: Bring up the vagrant VMs
 
 ```
-$ git clone https://github.com/contiv/netplugin
+$ git clone https://github.com/haoyixin/netplugin
 $ cd netplugin
 $ make mesos-docker-demo
 ```

@@ -3,7 +3,7 @@
 # How to setup Contiv
 
 ## Downloading Contiv
-https://github.com/contiv/netplugin/releases
+https://github.com/haoyixin/netplugin/releases
 
 Download tarball for the version you want to try.
   - `netplugin` and `netmaster` are main binaries which are part of contiv networking.

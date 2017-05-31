@@ -67,7 +67,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN:/usr/local/go/bin
 ```
 
-* Build the code on master node. You can run from $GOPATH/src/github.com/contiv/netplugin
+* Build the code on master node. You can run from $GOPATH/src/github.com/haoyixin/netplugin
 ```
 make run-build
 ```

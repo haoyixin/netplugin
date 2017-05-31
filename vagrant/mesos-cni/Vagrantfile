@@ -51,12 +51,12 @@ fi
 # setup docker cluster store
 if [[ $7 == *"consul:"* ]]
 then
-    cp #{gopath_folder}/src/github.com/contiv/netplugin/scripts/docker.service.consul /lib/systemd/system/docker.service
+    cp #{gopath_folder}/src/github.com/haoyixin/netplugin/scripts/docker.service.consul /lib/systemd/system/docker.service
 else
-    cp #{gopath_folder}/src/github.com/contiv/netplugin/scripts/docker.service /lib/systemd/system/docker.service
+    cp #{gopath_folder}/src/github.com/haoyixin/netplugin/scripts/docker.service /lib/systemd/system/docker.service
 fi
 # setup docker remote api
-cp #{gopath_folder}/src/github.com/contiv/netplugin/scripts/docker-tcp.socket /etc/systemd/system/docker-tcp.socket
+cp #{gopath_folder}/src/github.com/haoyixin/netplugin/scripts/docker-tcp.socket /etc/systemd/system/docker-tcp.socket
 systemctl enable docker-tcp.socket
 mkdir -p /etc/systemd/system/docker.service.d
 echo "[Service]" | sudo tee -a /etc/systemd/system/docker.service.d/http-proxy.conf
@@ -90,7 +90,7 @@ SCRIPT
 
 build_netplugin = <<BUILD_SCRIPT
 echo "============ build ================= "
-cd /opt/gopath/src/github.com/contiv/netplugin && make host-build 
+cd /opt/gopath/src/github.com/haoyixin/netplugin && make host-build 
 BUILD_SCRIPT
 
 VAGRANTFILE_API_VERSION = "2"
@@ -158,7 +158,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             if ENV["GOPATH"] && ENV['GOPATH'] != ""
               node.vm.synced_folder "../../../../../", File.join(gopath_folder, "src"), rsync: true
             else
-              node.vm.synced_folder "./../../", File.join(gopath_folder, "src/github.com/contiv/netplugin"), rsync: true
+              node.vm.synced_folder "./../../", File.join(gopath_folder, "src/github.com/haoyixin/netplugin"), rsync: true
             end
 
             node.vm.provision "shell" do |s|

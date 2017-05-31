@@ -23,8 +23,8 @@ import (
 	"strings"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/netmaster/master"
-	"github.com/contiv/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/netmaster/master"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
 	"github.com/docker/libnetwork/ipams/remote/api"
 	"github.com/docker/libnetwork/netlabel"
 )

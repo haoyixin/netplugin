@@ -19,9 +19,9 @@ import (
 	"errors"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
 )
 
 //AddBgp adds to the etcd state

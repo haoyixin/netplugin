@@ -21,7 +21,7 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/contiv/contivmodel/client"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
 
 	. "github.com/contiv/check"
 )

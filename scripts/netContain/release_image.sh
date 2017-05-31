@@ -15,7 +15,7 @@ function usage() {
 	echo "Usage:"
 	echo "./release_image.sh -v <contiv version> [-i <image name>] [-t <image tag>]"
 	echo "Example: ./release_image.sh -v 1.2.3"
-	echo "Released versions are available from https://github.com/contiv/netplugin/releases"
+	echo "Released versions are available from https://github.com/haoyixin/netplugin/releases"
 	echo "Default values are:"
 	echo "  Image name: \"contiv/netplugin\""
 	echo "  Image tag: value of -v switch"
@@ -59,7 +59,7 @@ cd -P -- "$(dirname -- "$0")"
 # empty this directory or tar will fail to extract
 rm -rf bin && mkdir bin
 
-curl -L -o $filename https://github.com/contiv/netplugin/releases/download/$contiv_version/$filename
+curl -L -o $filename https://github.com/haoyixin/netplugin/releases/download/$contiv_version/$filename
 tar xvfj $filename -C bin
 
 # remove the contrib directory, we don't need it in the image

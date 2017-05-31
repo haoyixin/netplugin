@@ -27,7 +27,7 @@ for addr in addrList:
     nodes.append(node)
 
 gopath = "/opt/gopath"
-scriptPath = gopath + "/src/github.com/contiv/netplugin/scripts"
+scriptPath = gopath + "/src/github.com/haoyixin/netplugin/scripts"
 
 if args.swarm == "swarm_mode":
     # Nodes leave the swarm

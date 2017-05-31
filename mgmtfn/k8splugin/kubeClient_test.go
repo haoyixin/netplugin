@@ -29,9 +29,9 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	. "github.com/contiv/check"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netplugin/plugin"
-	"github.com/contiv/netplugin/utils/k8sutils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/utils/k8sutils"
 	"github.com/gorilla/mux"
 )
 

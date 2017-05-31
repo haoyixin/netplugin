@@ -9,7 +9,7 @@ This document explains how to run Contiv CNI demo with Mesos
 ### Step 1: Bring up/bring down demo vagrant VMs
 
 ```
-$ git clone https://github.com/contiv/netplugin
+$ git clone https://github.com/haoyixin/netplugin
 $ cd netplugin/vagrant/mesos-cni
 # bring up demo vms
 $ make mesos-cni-demo 

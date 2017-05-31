@@ -19,7 +19,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 )
 
 // CfgEndpointState implements the State interface for an endpoint implemented using

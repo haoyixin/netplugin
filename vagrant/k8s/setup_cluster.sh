@@ -37,7 +37,7 @@ function GetContiv {
     echo "netplugin-$contivVer.tar.bz2 found, not fetching."
   else
     cd $top_dir/contiv_bin
-    wget https://github.com/contiv/netplugin/releases/download/$contivVer/netplugin-$contivVer.tar.bz2
+    wget https://github.com/haoyixin/netplugin/releases/download/$contivVer/netplugin-$contivVer.tar.bz2
     tar xvfj netplugin-$contivVer.tar.bz2
   fi
   popd

@@ -19,12 +19,12 @@ import (
 	"net"
 	"strings"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/docknet"
-	"github.com/contiv/netplugin/netmaster/gstate"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/docknet"
+	"github.com/haoyixin/netplugin/netmaster/gstate"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/utils/netutils"
 
 	log "github.com/Sirupsen/logrus"
 )

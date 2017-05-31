@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 	"github.com/hashicorp/consul/api"
 
 	log "github.com/Sirupsen/logrus"

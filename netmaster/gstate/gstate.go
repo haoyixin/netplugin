@@ -24,10 +24,10 @@ import (
 
 	"github.com/jainvipin/bitset"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netmaster/resources"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netmaster/resources"
+	"github.com/haoyixin/netplugin/utils/netutils"
 
 	log "github.com/Sirupsen/logrus"
 )

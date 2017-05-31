@@ -3,9 +3,9 @@ package utils
 import (
 	"reflect"
 
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/drivers"
-	"github.com/contiv/netplugin/state"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/drivers"
+	"github.com/haoyixin/netplugin/state"
 )
 
 // implement utilities for instantiating the supported core.Driver

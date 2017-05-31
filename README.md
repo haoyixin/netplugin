@@ -1,5 +1,5 @@
 [![Build Status](https://contiv-ci.ngrok.io/job/Netplugin%20Push%20Build%20Master/badge/icon)](https://contiv-ci.ngrok.io/job/Netplugin%20Push%20Build%20Master/) 
-[![Go Report Card](https://goreportcard.com/badge/github.com/contiv/netplugin)](https://goreportcard.com/report/github.com/contiv/netplugin)
+[![Go Report Card](https://goreportcard.com/badge/github.com/haoyixin/netplugin)](https://goreportcard.com/report/github.com/haoyixin/netplugin)
 
 ## Netplugin
 
@@ -33,7 +33,7 @@ Note: if you have $GOPATH set, then please ensure either you unset GOPATH,
 or clone the tree in `$GOPATH/src/github.com/contiv/` location
 
 ```
-$ git clone https://github.com/contiv/netplugin
+$ git clone https://github.com/haoyixin/netplugin
 $ cd netplugin; make demo
 $ vagrant ssh netplugin-node1
 ```

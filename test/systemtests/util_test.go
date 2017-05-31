@@ -1246,7 +1246,7 @@ func (s *systemtestSuite) SetUpSuiteVagrant(c *C) {
 			topDir = strings.Split(topDir, ":")[1]
 
 			contivNodes = 4 // 3 contiv nodes + 1 k8master
-			c.Assert(s.vagrant.Setup(false, []string{"CONTIV_L3=1 VAGRANT_CWD=" + topDir + "/src/github.com/contiv/netplugin/vagrant/k8s/"}, contivNodes), IsNil)
+			c.Assert(s.vagrant.Setup(false, []string{"CONTIV_L3=1 VAGRANT_CWD=" + topDir + "/src/github.com/haoyixin/netplugin/vagrant/k8s/"}, contivNodes), IsNil)
 
 		case "swarm":
 			c.Assert(s.vagrant.Setup(false, append([]string{"CONTIV_NODES=3 CONTIV_L3=1"}, s.basicInfo.SwarmEnv), contivNodes+contivL3Nodes), IsNil)
@@ -1269,7 +1269,7 @@ func (s *systemtestSuite) SetUpSuiteVagrant(c *C) {
 				topDir = dirs[0]
 			}
 
-			c.Assert(s.vagrant.Setup(false, []string{"VAGRANT_CWD=" + topDir + "/src/github.com/contiv/netplugin/vagrant/k8s/"}, contivNodes), IsNil)
+			c.Assert(s.vagrant.Setup(false, []string{"VAGRANT_CWD=" + topDir + "/src/github.com/haoyixin/netplugin/vagrant/k8s/"}, contivNodes), IsNil)
 
 		case "swarm":
 			c.Assert(s.vagrant.Setup(false, append([]string{}, s.basicInfo.SwarmEnv), contivNodes), IsNil)

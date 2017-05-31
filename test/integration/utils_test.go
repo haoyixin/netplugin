@@ -25,10 +25,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/master"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/master"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
 	"github.com/contiv/ofnet"
 
 	log "github.com/Sirupsen/logrus"

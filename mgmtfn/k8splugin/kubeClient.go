@@ -27,7 +27,7 @@ import (
 	"sync"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 	"golang.org/x/net/context"
 	"golang.org/x/net/context/ctxhttp"
 )

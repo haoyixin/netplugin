@@ -24,7 +24,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 
 	"github.com/contiv/contivmodel"
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 	"github.com/contiv/ofnet"
 )
 

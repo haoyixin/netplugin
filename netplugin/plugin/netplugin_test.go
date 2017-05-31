@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/contiv/netplugin/state"
+	"github.com/haoyixin/netplugin/state"
 )
 
 var fakeStateDriver *state.FakeStateDriver

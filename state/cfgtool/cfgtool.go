@@ -25,13 +25,13 @@ import (
 	"strings"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/drivers"
-	"github.com/contiv/netplugin/netmaster/docknet"
-	"github.com/contiv/netplugin/netmaster/gstate"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netmaster/resources"
-	"github.com/contiv/netplugin/utils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/drivers"
+	"github.com/haoyixin/netplugin/netmaster/docknet"
+	"github.com/haoyixin/netplugin/netmaster/gstate"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netmaster/resources"
+	"github.com/haoyixin/netplugin/utils"
 )
 
 // initStateDriver creates a state driver based on the cluster store URL

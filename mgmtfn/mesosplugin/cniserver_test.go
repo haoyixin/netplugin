@@ -17,12 +17,13 @@ package mesosplugin
 import (
 	"encoding/json"
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/mgmtfn/mesosplugin/cniapi"
 	"os"
 	"os/exec"
 	"strconv"
 	"testing"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
 )
 
 func TestMain(m *testing.M) {

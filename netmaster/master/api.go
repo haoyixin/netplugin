@@ -25,10 +25,10 @@ import (
 	"sync"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/utils"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/utils"
+	"github.com/haoyixin/netplugin/utils/netutils"
 )
 
 // AddressAllocRequest is the address request from netplugin

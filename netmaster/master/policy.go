@@ -17,9 +17,9 @@ package master
 
 import (
 	"github.com/contiv/contivmodel"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/utils"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/utils"
 
 	log "github.com/Sirupsen/logrus"
 )

@@ -24,7 +24,7 @@ import (
 	"net/http"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/mgmtfn/k8splugin/cniapi"
+	"github.com/haoyixin/netplugin/mgmtfn/k8splugin/cniapi"
 )
 
 const (

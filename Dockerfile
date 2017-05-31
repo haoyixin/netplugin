@@ -33,9 +33,9 @@ ENV GOPATH=/go/ NET_CONTAINER_BUILD=1
 ENTRYPOINT ["netplugin"]
 CMD ["--help"]
 
-COPY ./ /go/src/github.com/contiv/netplugin/
+COPY ./ /go/src/github.com/haoyixin/netplugin/
 
-WORKDIR /go/src/github.com/contiv/netplugin/
+WORKDIR /go/src/github.com/haoyixin/netplugin/
 
 RUN make build
 

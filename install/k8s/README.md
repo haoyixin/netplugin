@@ -26,7 +26,7 @@ Install kubernetes 1.4 or higher using http://kubernetes.io/docs/getting-started
 ```sh
 kubectl apply -f contiv.yaml
 ```
-* Get netctl from a Contiv release or local build. Contiv releases are available from https://github.com/contiv/netplugin/releases
+* Get netctl from a Contiv release or local build. Contiv releases are available from https://github.com/haoyixin/netplugin/releases
 * Optional step to set the routing mode:
 ```sh
 netctl global set --fwd-mode routing
@@ -55,7 +55,7 @@ kubectl delete deployment/kube-dns -n kube-system
 
 Note: netctl uses "netmaster" as the default netmaster host. So add a reference for "netmaster" in /etc/hosts or explicitly specify it as a parameter to all netctl calls.
 
-See https://github.com/contiv/netplugin/tree/master/mgmtfn/k8splugin for some examples on how to use Contiv networking with your pods.
+See https://github.com/haoyixin/netplugin/tree/master/mgmtfn/k8splugin for some examples on how to use Contiv networking with your pods.
 
 ### Uninstall Contiv
 * Cleanup contiv pods

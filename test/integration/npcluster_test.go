@@ -23,11 +23,11 @@ import (
 	log "github.com/Sirupsen/logrus"
 
 	"github.com/contiv/contivmodel"
-	"github.com/contiv/netplugin/core"
-	"github.com/contiv/netplugin/netmaster/daemon"
-	"github.com/contiv/netplugin/netplugin/agent"
-	"github.com/contiv/netplugin/netplugin/cluster"
-	"github.com/contiv/netplugin/netplugin/plugin"
+	"github.com/haoyixin/netplugin/core"
+	"github.com/haoyixin/netplugin/netmaster/daemon"
+	"github.com/haoyixin/netplugin/netplugin/agent"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
 )
 
 // NPCluster holds a new neplugin/netmaster cluster stats

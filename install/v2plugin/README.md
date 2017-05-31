@@ -40,7 +40,7 @@ Contiv plugin released from contiv repo is also pushed to docker hub. iflist has
 docker plugin install contiv/v2plugin:1.0.0 iflist=eth1,eth2
 ```
 ### vagrant dev/demo setup
-To create a plugin from [contiv repo](https://github.com/contiv/netplugin), enable v2plugin and run docker in swarm-mode, use the Makefile target demo-v2plugin
+To create a plugin from [contiv repo](https://github.com/haoyixin/netplugin), enable v2plugin and run docker in swarm-mode, use the Makefile target demo-v2plugin
 ```
 make demo-v2plugin
 ```

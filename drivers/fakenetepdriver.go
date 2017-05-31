@@ -1,6 +1,6 @@
 package drivers
 
-import "github.com/contiv/netplugin/core"
+import "github.com/haoyixin/netplugin/core"
 
 // FakeNetEpDriverConfig represents the configuration of the fakedriver,
 // which is an empty struct.

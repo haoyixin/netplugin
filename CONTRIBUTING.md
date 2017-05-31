@@ -12,7 +12,7 @@ All contributions are welcome, no matter how small or how big they are.
 ### Reporting Issues
 Issues which aren't related to the code or which are related to usage
 should be reported by clicking `New Issue` on
-[netplugin's issues on github](https://github.com/contiv/netplugin/issues).
+[netplugin's issues on github](https://github.com/haoyixin/netplugin/issues).
 Issues should also be opened for feature requests.
 
 The following pieces of information should be provided when running into

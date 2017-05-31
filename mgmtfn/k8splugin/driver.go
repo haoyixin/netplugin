@@ -26,14 +26,14 @@ import (
 	"time"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/contiv/netplugin/drivers"
-	"github.com/contiv/netplugin/mgmtfn/k8splugin/cniapi"
-	"github.com/contiv/netplugin/netmaster/intent"
-	"github.com/contiv/netplugin/netmaster/master"
-	"github.com/contiv/netplugin/netmaster/mastercfg"
-	"github.com/contiv/netplugin/netplugin/cluster"
-	"github.com/contiv/netplugin/utils"
-	"github.com/contiv/netplugin/utils/netutils"
+	"github.com/haoyixin/netplugin/drivers"
+	"github.com/haoyixin/netplugin/mgmtfn/k8splugin/cniapi"
+	"github.com/haoyixin/netplugin/netmaster/intent"
+	"github.com/haoyixin/netplugin/netmaster/master"
+	"github.com/haoyixin/netplugin/netmaster/mastercfg"
+	"github.com/haoyixin/netplugin/netplugin/cluster"
+	"github.com/haoyixin/netplugin/utils"
+	"github.com/haoyixin/netplugin/utils/netutils"
 	"github.com/vishvananda/netlink"
 )
 

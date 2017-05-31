@@ -22,7 +22,7 @@ package mastercfg
 import (
 	"encoding/json"
 
-	"github.com/contiv/netplugin/core"
+	"github.com/haoyixin/netplugin/core"
 )
 
 const (

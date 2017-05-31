@@ -5,8 +5,8 @@ import (
 	"sort"
 
 	"github.com/codegangsta/cli"
-	"github.com/contiv/netplugin/netctl"
-	"github.com/contiv/netplugin/version"
+	"github.com/haoyixin/netplugin/netctl"
+	"github.com/haoyixin/netplugin/version"
 )
 
 type byName []cli.Command

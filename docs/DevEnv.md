@@ -22,7 +22,7 @@ $ git clone https://github.com/<your-github-id>/netplugin.git
 ### 2. Create development VMs. `Estimated time: 3-4 minutes`
 Note: This is a one time activity
 ```
-$ cd $GOPATH/src/github.com/contiv/netplugin
+$ cd $GOPATH/src/github.com/haoyixin/netplugin
 $ make start
 ```
 
@@ -32,11 +32,11 @@ therefore any changes changes are saved outside VM and are not lost if VM crashe
 ```
 # ssh into one of the VMs
 $ make ssh
-# this command will change the directory to $GOPATH/src/github.com/contiv/netplugin
+# this command will change the directory to $GOPATH/src/github.com/haoyixin/netplugin
 # make code changes here and add unit/system tests for your changes
 . . .
 # this command might not be needed if the directory wasn't changed
-$ cd $GOPATH/src/github.com/contiv/netplugin
+$ cd $GOPATH/src/github.com/haoyixin/netplugin
 # compile the recently made changes. `Estimated time: 1m 20s`
 $ make host-build
 ```
@@ -45,7 +45,7 @@ $ make host-build
 Note: All this is done from inside the VM. Technically the VM is
 the development environment including unit testing
 ```
-$ cd $GOPATH/src/github.com/contiv/netplugin
+$ cd $GOPATH/src/github.com/haoyixin/netplugin
 # make sure to clean up any remnants from prior runs; note that cleanup may
 # throw some harmless errors if things are already clean (so feel free to ignore them)
 $ make host-cleanup
@@ -85,10 +85,10 @@ This will checkout a tree from your fork and run full Jenkins CI on the branch.
 
 Easiest way to work across multiple repos is by doing a `godep restore` first and then make changes.
 
-1. SSH to vagrant VM, goto `/opt/gopath/src/github.com/contiv/netplugin` directory.
+1. SSH to vagrant VM, goto `/opt/gopath/src/github.com/haoyixin/netplugin` directory.
 2. issue `godep restore` command to restore all dependent packages into `$GOPATH`
 3. go to individual repo directory, for example `github.com/contiv/ofnet` and checkout your fork of the repository.
-4. Make changes to netplugin and ofnet and rebuild netplugin/netmaster using `cd /opt/gopath/src/github.com/contiv/netplugin; go install ./netplugin ./netmaster`
+4. Make changes to netplugin and ofnet and rebuild netplugin/netmaster using `cd /opt/gopath/src/github.com/haoyixin/netplugin; go install ./netplugin ./netmaster`
 5. restart netplugin/netmaster using `make host-restart`
 6. Test your code
 7. Repeat steps 4-6 multiple times as you need

@@ -34,7 +34,7 @@ Install Contiv as ddescribed in the README
 
 ### Developer Guide
 
-* To build a new version of contiv, see https://github.com/contiv/netplugin/tree/master/scripts/netContain
+* To build a new version of contiv, see https://github.com/haoyixin/netplugin/tree/master/scripts/netContain
   
   TL;DR, run:
 ```sh

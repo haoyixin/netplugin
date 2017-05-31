@@ -26,7 +26,7 @@ $ cd ~/go/src/github.com/k8s
 $ git clone https://github.com/jojimt/contrib -b contiv
 
 $ cd ~/go/src/github.com/k8s
-$ git clone https://github.com/contiv/netplugin
+$ git clone https://github.com/haoyixin/netplugin
 ```
 
 #### Step 2: Create cluster

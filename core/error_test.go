@@ -13,7 +13,7 @@ func TestErrorStringFormat(t *testing.T) {
 
 	fileName := "error_test.go"
 	lineNum := 12 // line number where error was formed
-	funcName := "github.com/contiv/netplugin/core.TestErrorStringFormat"
+	funcName := "github.com/haoyixin/netplugin/core.TestErrorStringFormat"
 
 	expectedStr := fmt.Sprintf("%s [%s %s %d]", refStr, funcName, fileName, lineNum)
 
@@ -37,7 +37,7 @@ func TestErrorStackTrace(t *testing.T) {
 
 	fileName := "error_test.go"
 	lineNum := 27 // line number where error was formed
-	funcName := "github.com/contiv/netplugin/core.getError"
+	funcName := "github.com/haoyixin/netplugin/core.getError"
 
 	expectedStr := fmt.Sprintf("%s [%s %s %d]", msg, funcName, fileName, lineNum)
 

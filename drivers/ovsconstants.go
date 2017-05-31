@@ -1,6 +1,6 @@
 package drivers
 
-import "github.com/contiv/netplugin/netmaster/mastercfg"
+import "github.com/haoyixin/netplugin/netmaster/mastercfg"
 
 const (
 	operCreateBridge oper = iota
