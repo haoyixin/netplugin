@@ -19,9 +19,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	logger "github.com/Sirupsen/logrus"
-	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
-	"github.com/haoyixin/netplugin/version"
 	"io/ioutil"
 	"net"
 	"net/http"
@@ -29,6 +26,10 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+
+	logger "github.com/Sirupsen/logrus"
+	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
+	"github.com/haoyixin/netplugin/version"
 )
 
 const (
@@ -146,6 +147,9 @@ func (cniApp *cniAppInfo) parseNwInfoLabels() {
 
 		case cniapi.LabelNetworkGroup:
 			cniApp.cniMesosAttr.Labels.NetworkGroup = elem.Value
+
+		case cniapi.LabelEPLabels:
+			cniApp.cniMesosAttr.Labels.EPLabels = elem.Value
 		}
 	}
 }

@@ -52,12 +52,13 @@ type AddressReleaseRequest struct {
 
 // CreateEndpointRequest has the endpoint create request from netplugin
 type CreateEndpointRequest struct {
-	TenantName   string          // tenant name
-	NetworkName  string          // network name
-	ServiceName  string          // service name
-	EndpointID   string          // Unique identifier for the endpoint
-	EPCommonName string          // Common name for the endpoint
-	ConfigEP     intent.ConfigEP // Endpoint configuration
+	TenantName   string            // tenant name
+	NetworkName  string            // network name
+	ServiceName  string            // service name
+	EndpointID   string            // Unique identifier for the endpoint
+	EPCommonName string            // Common name for the endpoint
+	ConfigEP     intent.ConfigEP   // Endpoint configuration
+	EPLabels     map[string]string // Endpoint labels
 }
 
 // CreateEndpointResponse has the endpoint create response from netmaster

@@ -18,20 +18,23 @@ package mesosplugin
 import (
 	"encoding/json"
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
-	"github.com/haoyixin/netplugin/netplugin/plugin"
-	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net"
 	"net/http"
 	"os"
+	"strings"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/gorilla/mux"
+	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
+	"github.com/haoyixin/netplugin/netplugin/plugin"
 )
 
 type cniServer struct {
 	networkID      string
 	endpointID     string
 	endPointLabels map[string]string
+	customLabels   map[string]string
 	ipv4Addr       string
 	pluginArgs     cniapi.CniCmdReqAttr
 	cniSuccessResp cniapi.CniCmdSuccessResp
@@ -99,12 +102,13 @@ func (cniReq *cniServer) parseCniArgs(httpBody []byte) error {
 	}
 
 	cniLog.Debugf("parsed ifname: %s, netns: %s, container-id: %s,"+
-		"tenant: %s, network-name: %s, network-group: %s",
+		"tenant: %s, network-name: %s, network-group: %s, ep-labels: %s",
 		cniReq.pluginArgs.CniIfname, cniReq.pluginArgs.CniNetns,
 		cniReq.pluginArgs.CniContainerid,
 		cniReq.pluginArgs.Labels.TenantName,
 		cniReq.pluginArgs.Labels.NetworkName,
-		cniReq.pluginArgs.Labels.NetworkGroup)
+		cniReq.pluginArgs.Labels.NetworkGroup,
+		cniReq.pluginArgs.Labels.EPLabels)
 
 	// set defaults
 	cniReq.endPointLabels = map[string]string{cniapi.LabelNetworkName: "default-net",
@@ -134,6 +138,21 @@ func (cniReq *cniServer) parseCniArgs(httpBody []byte) error {
 			}
 			cniLog.Infof("netplugin label %s = %s", cniapi.LabelNetworkGroup,
 				cniReq.endPointLabels[label])
+		}
+	}
+
+	// set endpoint labels
+	cniReq.customLabels = make(map[string]string)
+
+	if len(cniReq.pluginArgs.Labels.EPLabels) > 0 {
+		cniLog.Infof("netplugin label %s = %s", cniapi.LabelEPLabels, cniReq.pluginArgs.Labels.EPLabels)
+		for _, l := range strings.Split(cniReq.pluginArgs.Labels.EPLabels, " ") {
+			kv := strings.Split(l, "=")
+			if len(kv) == 2 {
+				cniReq.customLabels[kv[0]] = kv[1]
+			} else {
+				cniLog.Errorf("invailid endpoint label: %s", kv)
+			}
 		}
 	}
 

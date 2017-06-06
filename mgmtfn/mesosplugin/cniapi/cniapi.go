@@ -39,6 +39,7 @@ type NetpluginLabel struct {
 	TenantName   string `json:"io.contiv.tenant,omitempty"`
 	NetworkName  string `json:"io.contiv.network,omitempty"`
 	NetworkGroup string `json:"io.contiv.net-group,omitempty"`
+	EPLabels     string `json:"io.contiv.ep-labels,omitempty"`
 }
 
 // CniCmdReqAttr contains CNI attributes passed to netplugin
@@ -71,6 +72,8 @@ const (
 	LabelNetworkName = "io.contiv.network"
 	// LabelNetworkGroup : contiv group label
 	LabelNetworkGroup = "io.contiv.net-group"
+	// LabelEPLabels : contiv endpoint label
+	LabelEPLabels = "io.contiv.ep-labels"
 
 	// CniDefaultVersion : CNI version
 	CniDefaultVersion = "0.2"

@@ -17,6 +17,11 @@ package mesosplugin
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
+	"os/exec"
+	"strings"
+
 	"github.com/haoyixin/netplugin/core"
 	"github.com/haoyixin/netplugin/drivers"
 	"github.com/haoyixin/netplugin/mgmtfn/mesosplugin/cniapi"
@@ -27,10 +32,6 @@ import (
 	"github.com/haoyixin/netplugin/netplugin/plugin"
 	"github.com/haoyixin/netplugin/utils"
 	"github.com/haoyixin/netplugin/utils/netutils"
-	"io/ioutil"
-	"os"
-	"os/exec"
-	"strings"
 )
 
 const netNsDir = "/var/run/netns/"
@@ -247,9 +248,10 @@ func (cniReq *cniServer) createCniEndPoint() error {
 			Host:        hostName,
 			ServiceName: cniReq.endPointLabels[cniapi.LabelNetworkGroup],
 		},
+		EPLabels: cniReq.customLabels,
 	}
 
-	cniLog.Infof("endpoint-req: epid:%s cont-id:%s ", epReq.EndpointID, epReq.ConfigEP.Container)
+	cniLog.Infof("endpoint-req: epid:%s cont-id:%s endpoint-labels: %s", epReq.EndpointID, epReq.ConfigEP.Container, epReq.EPLabels)
 
 	epResp := master.CreateEndpointResponse{}
 	if err = cluster.MasterPostReq("/plugin/createEndpoint", &epReq, &epResp); err != nil {

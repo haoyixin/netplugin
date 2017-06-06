@@ -117,6 +117,7 @@ func CreateEndpoint(stateDriver core.StateDriver, nwCfg *mastercfg.CfgNetworkSta
 	epCfg.HomingHost = ep.Host
 	epCfg.ServiceName = ep.ServiceName
 	epCfg.EPCommonName = epReq.EPCommonName
+	epCfg.Labels = epReq.EPLabels
 
 	// In ACI mode, if a pod does not have a group label, we will assume "default-group"
 	isAci, _ := IsAciConfigured()
